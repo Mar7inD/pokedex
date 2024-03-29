@@ -33,8 +33,8 @@ const Pokedex = () => {
                 {pokemonData.map(pokemon => <Pokemon key={pokemon.name} name={pokemon.name} url={pokemon.url} />)}
             </div>
             <div className='buttons'>
-                <button onClick={goToPrevPage} className={prevPageUrl === undefined ? '' : 'inactive'}>Previous</button>
-                <button onClick={goToNextPage} className={`${nextPageUrl !== undefined? '' : 'inactive'},next`}>Next</button>
+                {prevPageUrl && <button onClick={goToPrevPage} className="prev"><img className="rotate" src="./circled-right.gif" alt="Previous button"/></button>}
+                {nextPageUrl && <button onClick={goToNextPage} className={`next`}><img src="./circled-right.gif" alt="Next button"/></button>}
             </div>
         </div>
     )
