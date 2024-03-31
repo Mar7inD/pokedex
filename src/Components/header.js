@@ -5,7 +5,7 @@ const header = () => {
 
     return(
         <>
-            <div class="element-with-top-shadow"></div>
+            <div className="element-with-top-shadow"></div>
             <nav>
                 
 
