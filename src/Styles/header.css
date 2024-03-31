@@ -3,15 +3,70 @@ nav {
     justify-content: center;
     align-items: center;
     height: auto;
-
+    background-color: white;
 }
 
+.element-with-top-shadow {
+    height: 5px;
+    position: relative; 
+    overflow: hidden;  
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .element-with-top-shadow:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; 
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+
 .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: black;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
+    color: #919191;
+    width: 100px;
+    padding: 10px 0px;
     font-size: 20px;
-    margin: 10px;
+    margin: 10px 0;
+}
+
+
+.link p {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.pokedex-text:hover {
+    background-color: #e3350d;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.about-text:hover {
+    background-color: #30a7d7;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.pokedex-line {
+    background-color: #e3350d;
+    width: 100%;
+    height: 5px;
+}
+
+.about-line {
+    background-color: #30a7d7;
+    width: 100%;
+    height: 5px;
 }
