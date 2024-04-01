@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/Pokemon.css";
 import { getPokemonColor } from "../Modules/PokemonColorType"
 
@@ -22,13 +23,17 @@ const Pokemon = ({name, url}) => {
       const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1)
 
     return(
-        <div className="card" style={{ background: `${color}` }}> 
+        
+        <div className="card" style={{ background: `${color}` }}>
+            <Link to="/Pokemon" className="pokemon-link">
             <div className="text">
             <p>{`#${id}`}</p>   
             <h2>{capitalizedName}</h2>
             </div>
             <img src={image} alt={capitalizedName}/>
+            </Link>
         </div>
+        
     )
 };
 
