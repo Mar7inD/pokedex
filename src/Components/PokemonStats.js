@@ -11,17 +11,20 @@ const PokemonStats = () => {
       return response.json();
     });
   
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (isLoading) return <div className="container"><p className="center">Loading...</p></div>;
+    if (error) return <div className="container"><p className="center">Error: {error.message}</p></div>;
   
     return (
         <div className="container">
+
             <div className="pokemon-holder" style={{ background: getPokemonColor(data?.types[0]?.type.name) }}>
+                
                 <div className="container pokemon-headline">
                     <h2>{getSentenceFormat(data.name)}</h2>
                     <img src={data?.sprites?.other.dream_world.front_default} alt={data?.name} />
                     {data?.types.map(type => <div class='type' style={{background: getPokemonColor(type.type.name)}}>{getSentenceFormat(type.type.name)}</div>)}
                 </div>
+
                 <div className="container pokemon-stats">
                     <h2>Base stats:</h2>
 
