@@ -25,7 +25,7 @@ const Pokemon = ({name, url}) => {
     return(
         
         <div className="card" style={{ background: `${color}` }}>
-            <Link to="/Pokemon" className="pokemon-link">
+            <Link to={`/pokemon?id=${id}`} className="pokemon-link">
             <div className="text">
             <p>{`#${id}`}</p>   
             <h2>{capitalizedName}</h2>

@@ -35,8 +35,6 @@ const Pokedex = () => {
 
                 // Total pages calculation
                 setTotalPages(Math.ceil(data.count / limit));
-                console.log("total pages: " + totalPages);
-                console.log("current page: " + currentPage)
                 
                 // New
                 setCurrentPage(getCurrentPage(urlParams, totalPages, limit));

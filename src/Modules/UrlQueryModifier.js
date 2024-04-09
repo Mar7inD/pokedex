@@ -13,3 +13,10 @@ export function modifyQuery(url, property, value) {
     return newUrl
 
 }
+
+export function getIdFromUrl(url) {
+    const params = new URLSearchParams(url.split('?')[1]);
+    const id = params.get('id');
+    return id;
+    
+}

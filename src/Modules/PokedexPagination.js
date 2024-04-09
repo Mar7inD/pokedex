@@ -1,7 +1,6 @@
 // Function for getting current pages
 export function getCurrentPage( urlParams, totalPages, limit) {
     
-    console.log(urlParams.toString())
     if(urlParams) {
         const offset = parseInt(urlParams.get('offset'), 10);
 
