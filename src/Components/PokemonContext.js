@@ -1,7 +1,11 @@
 import React, { createContext, useState } from 'react';
 
+
 const PokemonContext = createContext({
     // Pokedex variables and functions
+    data: [],
+    setData: [],
+    
     pokemonData: [],
     setPokemonData: () => {},
     currentUrl: '',
