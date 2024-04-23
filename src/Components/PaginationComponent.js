@@ -9,6 +9,9 @@ const Pagination = () => {
     // Context hooks for sharing data
     const { currentUrl, setCurrentUrl, nextUrl, prevUrl, visiblePages, currentPage, limit, setLimit } = useContext(PokemonContext);
 
+    // Image urls
+    const arrowAnimation = 'pokedex/Images/arrow-right.gif'
+
     // Triggered function on dropdown change
     const changeLimit = (event) => {
         const newLimit = event.target.value
@@ -39,7 +42,7 @@ const Pagination = () => {
 
     <div className='pagination-holder'>
         <div className='buttons'>
-        {prevUrl ? <button onClick={() => {goToPage('prev')}} ><img className="rotate" src="/circled-right.gif" alt="Previous button" /></button> : <img className='rotate img-like-button' src="https://img.icons8.com/color/48/circled-right--v3.png" alt="Previous button" />}
+        {prevUrl ? <button onClick={() => {goToPage('prev')}} ><img className="rotate" src={arrowAnimation} alt="Previous button" /></button> : <img className='rotate img-like-button' src="https://img.icons8.com/color/48/circled-right--v3.png" alt="Previous button" />}
         
         {/* Page number rendering  */}
         <div className="page-numbering">
@@ -48,7 +51,7 @@ const Pagination = () => {
             ))}
         </div>
         
-        {nextUrl ? <button onClick={() => {goToPage('next')}} ><img src="/circled-right.gif" alt="Next button" /></button> : <img className='img-like-button' src="https://img.icons8.com/color/48/circled-right.gif" alt="Next button" />}
+        {nextUrl ? <button onClick={() => {goToPage('next')}} ><img src={arrowAnimation} alt="Next button" /></button> : <img className='img-like-button' src="https://img.icons8.com/color/48/circled-right--v3.png" alt="Next button" />}
         </div>
         <select id="count-dropdown" value={limit} onChange={changeLimit}>
             <option value="20">20 Pokemons</option>
