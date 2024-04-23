@@ -10,7 +10,7 @@ const Pagination = () => {
     const { currentUrl, setCurrentUrl, nextUrl, prevUrl, visiblePages, currentPage, limit, setLimit } = useContext(PokemonContext);
 
     // Image urls
-    const arrowAnimation = 'pokedex/Images/arrow-right.gif'
+    const arrowAnimation = 'Images/arrow-right.gif'
 
     // Triggered function on dropdown change
     const changeLimit = (event) => {

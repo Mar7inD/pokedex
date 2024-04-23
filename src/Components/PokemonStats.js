@@ -38,9 +38,8 @@ const PokemonStats = () => {
     }
     ,[pokemonId, navigation]);
 
-  
-    if (isLoading.current) return <div className="container"><p className="center">Loading...</p></div>;
-    //if (error.current) return <div className="container"><p className="center">Error: {error.message}</p></div>;
+
+    if (error.current) return <div className="container"><p className="center">Error: {error.message}</p></div>;
   
     error.current = '';
 
@@ -56,14 +55,15 @@ const PokemonStats = () => {
     }
 
     const primaryColor = getPokemonColor(data?.types[0].type.name);
-    const arrow = 'pokedex/Images/arrow-right.gif';
+    const arrow = 'Images/arrow-right.gif';
 
     return (
         <div>
         <div className="container pokemon-stats-holder">
             <button onClick={() => pokemonIdChanger('back')}><img className="rotate" src={arrow} alt="Previous button" /></button>
             <section className="pokemon-holder" style={{ background: primaryColor }}>
-            {data ? <>
+            {isLoading.current ?  ( <div className="container"><p className="center">Loading...</p></div> )
+                    : <>
                     <div className="container pokemon-headline">
                         <h2>{getSentenceFormat(data.name)}</h2>
                         <img src={data?.sprites?.other.dream_world.front_default} alt={data?.name} />
@@ -83,7 +83,7 @@ const PokemonStats = () => {
                         <p>Total: {data.stats.reduce((a, stat) => a + stat.base_stat, 0)}</p>
                     </div>
                 </> 
-                : ( <div className="container"><p className="center">Loading...</p></div> ) }
+                 }
             </section>
             <button onClick={() => pokemonIdChanger('forward')}><img src={arrow} alt="Next button"/></button>
         </div>
